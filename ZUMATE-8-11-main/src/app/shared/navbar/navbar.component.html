@@ -1,0 +1,65 @@
+<header>
+  <!--Barra superior-->
+  <div class="top-bar">
+    <div class="d-flex justify-content-between flex-wrap">
+    </div>
+  </div>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="./Inicio/logo.png" alt="logo zumate" height="90">
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/" (click)="closeMenu()">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" routerLink="/sobre-nosotros" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sobre Nosotros
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- Usamos fragmentos de Angular para desplazarnos a las secciones -->
+                <li><a class="dropdown-item" [routerLink]="['/sobre-nosotros']" [fragment]="'id-1'" (click)="closeMenu()">Director Ejecutivo CEO</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/sobre-nosotros']" [fragment]="'id-2'" (click)="closeMenu()">Equipo de trabajo</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/sobre-nosotros']" [fragment]="'id-3'" (click)="closeMenu()">Organigrama</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/sobre-nosotros']" [fragment]="'id-4'" (click)="closeMenu()">Nuestros aliados</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/programas" (click)="closeMenu()">Programas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/como-ayudar" (click)="closeMenu()">¿Cómo ayudar?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/blog" (click)="closeMenu()">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contacto" (click)="closeMenu()">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login" (click)="closeMenu()">Iniciar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="btn-donar" routerLink="/donar">ZUMA con nosotros</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<script type="text/javascript">
+  window.addEventListener("scroll", function () {
+    var header = document.querySelector("header");
+    header.classList.toggle("bajar-nav", window.scrollY > 0);
+  })
+</script>

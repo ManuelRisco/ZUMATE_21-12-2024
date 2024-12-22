@@ -1,0 +1,116 @@
+/*Carousel de imagenes e información*/
+.contenedor-carousel{
+  position: relative;
+  padding: 10% 15% 5% 15%;
+  width: 100%;
+  background-image: url("/Inicio/fondo_carousel.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.contenedor-carousel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.contenedor .card img{
+  height: auto;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .card-text {
+      font-size: 0.9rem;
+  }
+}
+
+/*Información Valores*/
+.contenedor-valores{
+  padding: 3% 15% 3% 15%;
+  width: 100% !important;
+  height: auto;
+  background-color: white;
+  color: white;
+}
+
+.contenedor-valores h2{
+  font-weight: bold;
+  font-family: 'Arial black';
+  color: #2e2c7f;
+  text-align: center;
+}
+
+.tarjeta-resp{
+  width: 100%;
+  border: none !important;
+}
+
+.icono-valores{
+  text-align: center;
+  margin: 0 0 10px 0;
+  color: #e61a24;
+}
+
+.texto-tarjeta-valores{
+  text-align: center;
+  height: 200px;
+  max-height: 30%;
+  background-color: #b4c5dd;
+  border-radius: 20px;
+}
+.card-text {
+  position: relative;
+  top: 5px;
+}
+
+/*Información noticias*/
+.contenedor-noticias{
+  background: linear-gradient(90deg, #2d2c7f, #493092, #b84466, #ed7a30, #ff1d06);
+  padding: 3% 20% 3% 20%;
+  width: 100%;
+  height: auto;
+  color: white;
+  text-align: center;
+}
+
+.contenedor-noticias h2{
+  font-family: 'Arial Black';
+}
+
+.tarjeta-noticias{
+  width: 100%;
+  background-color: white;
+  border-radius: 0 50px 0 50px;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+  transition: all 400ms ease;
+}
+
+.tarjeta-noticias:hover{
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  transform: translateY(-3%);
+}
+
+.tarjeta-noticias img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.texto-tarjeta-noticias{
+  height: 200px;
+  max-height: 30%;
+}
+
+.texto-tarjeta-noticias p{
+  padding: 0 8% 0 8%;
+}

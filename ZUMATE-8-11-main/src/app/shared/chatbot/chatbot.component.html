@@ -1,0 +1,28 @@
+<div class="chatbot-container">
+  <div>
+    <a href="https://api.whatsapp.com/send?phone=+51917365659&text=Quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank">
+      <img src="/Gift/pngwing.com.png" style="height: 50px;" alt="Whatsapp">
+    </a>
+  </div>
+
+  <div *ngIf="isChatOpen" class="chat-window">
+    <div class="chat-header">
+      <h2>Bienvenido a la ONG ZUMATE</h2>
+      <p>¿Cómo podemos ayudarte?</p>
+      <button class="close-btn" (click)="closeChatbot()">X</button>
+    </div>
+    <div class="chat-body">
+      <p [innerHTML]="responseText"></p>
+
+      <div *ngFor="let option of currentOptions">
+        <button class="chat-option" (click)="showInfo(option.value)">
+          {{ option.label }}
+        </button>
+      </div>
+
+      <button *ngIf="currentStep !== 'main'" class="chat-option" (click)="resetChat()">Volver</button>
+    </div>
+  </div>
+
+  <button *ngIf="!isChatOpen" class="chatbot-btn" (click)="openChatbot()">Abrir Chat</button>
+</div>

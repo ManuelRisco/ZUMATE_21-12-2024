@@ -1,0 +1,92 @@
+<main class="main">
+  <!-- Sección 1: Director Ejecutivo -->
+  <section id="id-1">
+    <div class="contenedor-ceo">
+      <div class="item1">
+        <img src="/Nuestro-Equipo/Harold Bullon..png" alt="imagen-ceo" style="object-fit: cover; width: 600px;">
+      </div>
+      <div class="item2">
+        <h1>HAROLD BULLÓN</h1>
+        <h2>CEO, FUNDADOR</h2>
+        <p>Lidero Zumate ONG, donde empoderamos a niños y adolescentes mediante educación y liderazgo, brindándoles
+          herramientas para su desarrollo personal y profesional, fomentando ciudadanos comprometidos con su comunidad.
+          Además, como CEO de Rexha Inmobiliaria, guío un equipo dedicado a la intermediación y construcción de
+          proyectos diversos, ofreciendo soluciones integrales que combinan calidad, innovación y compromiso para
+          satisfacer las necesidades de nuestros clientes y llevar sus visiones inmobiliarias al siguiente nivel. </p>
+        <div class="contenedor-ceo-button">
+          <button class="button-contactar"
+            onclick="window.open('https://api.whatsapp.com/send?phone=+51917365659&text=Quiero%20m%C3%A1s%20informaci%C3%B3n', '_blank');">Contactar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Equipo de Trabajo -->
+  <section id="id-2">
+    <div class="contenedor-equipo-nombre">
+      <h1>EQUIPO DE TRABAJO</h1>
+    </div>
+
+    <div class="container my-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 mb-4">
+          <div class="tarjeta-equipo text-center p-4">
+            <img src="/Nuestro-Equipo/Damaris Burga Mori.png" class="rounded-circle mx-auto d-block"
+              alt="Damaris Burga Mori">
+            <h4 class="mt-3">Damaris Burga Mori</h4>
+            <p>Administradora General</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div class="tarjeta-equipo text-center p-4">
+            <img src="/Nuestro-Equipo/Angela Saavedra.png" class="rounded-circle mx-auto d-block"
+              alt="Angela Saavedra">
+            <h4 class="mt-3">Angela Saavedra</h4>
+            <p>Comunicación y Relaciones Públicas</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div class="tarjeta-equipo text-center p-4">
+            <img src="/Nuestro-Equipo/Damaris Burga Mori.png" class="rounded-circle mx-auto d-block"
+              alt="Yuli Deudor">
+            <h4 class="mt-3">Yuli Deudor</h4>
+            <p>Área de Voluntariado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: Organigrama -->
+  <section id="id-3">
+    <div class="contenedor-organigrama-nombre">
+      <h1>ORGANIGRAMA</h1>
+    </div>
+    <div class="contenedor-organigrama">
+      <img src="/Organigrama/organigrama.png" alt="organigrama">
+    </div>
+  </section>
+
+  <section id="id-4" class="mb-4">
+    <div class="contenedor-nuestroaliados-nombre">
+      <h1>NUESTROS ALIADOS</h1>
+    </div>
+    <div class="contenedor-alidados">
+      <div *ngIf="aliados.length > 0; else sinAliados" class="fila-aliados">
+        <div *ngFor="let aliado of aliados" class="aliado">
+          <!-- Enlace alrededor de la imagen que apunta a la URL específica del aliado -->
+          <a [href]="aliado.url_aliado" target="_blank">
+            <img [src]="aliado.ruta_archivo" alt="Logo de Aliado" width="100" />
+          </a>
+          <!-- Nombre del aliado debajo de la imagen -->
+          <p>{{ aliado.nombre }}</p>
+        </div>
+      </div>
+  
+      <ng-template #sinAliados>
+        <p>No hay aliados disponibles</p>
+      </ng-template>
+    </div>
+  </section>
+  
+</main>

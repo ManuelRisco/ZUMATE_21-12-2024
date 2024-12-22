@@ -1,0 +1,38 @@
+<div class="contenedor-login">
+  <div class="container w-75 mt-5">
+    <div class="contenedor row align-items-stretch">
+      <!-- Imagen lateral -->
+      <div class="signin-image d-none d-md-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img src="/Login/imagen_login.png" alt="imagen login" class="img-fluid">
+      </div>
+
+      <!-- Formulario de inicio de sesión adaptado a Angular -->
+      <div id="fondo-form" class="col p-5 rounded">
+        <div class="text-end">
+          <img src="/Login/logo.png" width="48" alt="logo zumate">
+        </div>
+
+        <h2 class="fw-bold text-center py-5">Iniciar Sesión</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="mb-4">
+            <label for="usuario" class="form-label"><b>Nombre de usuario</b></label>
+            <input type="text" id="usuario" formControlName="usuario" class="form-control" placeholder="Ingrese su id">
+          </div>
+        
+          <div class="mb-4">
+            <label for="password" class="form-label"><b>Contraseña</b></label>
+            <input type="password" id="password" formControlName="password" class="form-control" placeholder="********">
+          </div>
+        
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+          </div>
+        
+          <div *ngIf="errorMessage" class="text-danger mt-3">{{ errorMessage }}</div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>

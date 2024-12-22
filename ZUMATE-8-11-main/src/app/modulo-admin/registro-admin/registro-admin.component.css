@@ -1,0 +1,205 @@
+/* Contenedor principal */
+div {
+  padding: 30px;
+  margin: 20px auto;
+  width: 95%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+
+td {
+  background-color: #fff;
+  color: #666;
+}
+
+/* Filas alternas de la tabla */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Contenedor de los botones en la tabla */
+div.button-container {
+  display: flex;
+  gap: 15px; /* Espacio entre los botones */
+  justify-content: center;
+}
+
+/* Estilos para los botones en la tabla */
+button {
+  padding: 12px 25px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #f65414;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 120px; /* Asegura que todos los botones tengan el mismo tamaño */
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #2d84fe;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Estilo de los botones de acción en la tabla */
+button.edit {
+  background-color: #2d84fe;
+}
+
+button.delete {
+  background-color: #f65414;
+}
+
+button.edit:hover {
+  background-color: #1d66c1;
+}
+
+button.delete:hover {
+  background-color: #f33e00;
+}
+
+/* Formulario: Botón de acción en el formulario */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+form label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #f65414;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Estilos de los botones dentro del formulario */
+form button {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  background-color: #f65414;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  background-color: #2d84fe;
+}
+
+/* Botón de cancelar dentro del formulario */
+form button[type="button"] {
+  background-color: #999;
+  margin-top: 10px;
+}
+
+form button[type="button"]:hover {
+  background-color: #777;
+}
+
+/* Espaciado adicional para los botones dentro del formulario */
+button[type="button"], form button {
+  margin-bottom: 15px; /* Espacio entre los botones */
+}
+
+/* Mensaje de error para el formulario */
+input.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+input.ng-touched.ng-valid {
+  border-color: green;
+}
+
+/* Estilo de los botones en el formulario de edición */
+button.edit {
+  background-color: #2d84fe;
+}
+
+button.delete {
+  background-color: #f65414;
+}
+
+/* Estilos para el estado de carga (si es necesario) */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #f65414;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

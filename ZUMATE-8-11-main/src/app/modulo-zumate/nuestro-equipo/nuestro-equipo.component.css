@@ -1,0 +1,382 @@
+.contenedor-ceo,
+.contenedor-equipo,
+.contenedor-organigrama-nombre,
+.contenedor-nuestroaliados-nombre {
+    margin-top: 0;
+}
+
+.contenedor-ceo {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 100px;
+    margin: 0 auto;
+}
+
+.item1 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 300px 300px 0px 0px;
+    object-fit: cover;
+}
+
+.item2 {
+    background: rgb(12, 192, 223);
+    padding: 180px 100px;
+    text-align: justify;
+    max-width: 1000px;
+    flex-grow: 1;
+}
+
+.item2 h1, .item2 h2 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.item2 h1 {
+    font-weight: 1000;
+    font-size: 55px;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-kerning: none;
+    text-decoration: none;
+    position: relative;
+    bottom: 50px;
+}
+.item2 h2 {
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(100, 102, 114);
+    font-kerning: none;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative;
+    bottom: 50px;
+}
+
+.item2 p {
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-kerning: none;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.contenedor-equipo-nombre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+
+}
+.contenedor-equipo-nombre h1 {
+    font-weight: 1000;
+    font-size: 55px;
+    font-style: normal;
+    font-kerning: none;
+    text-decoration: none;
+    color: rgb(46, 44, 127);
+}
+
+.contenedor-equipo {
+    gap: 60px;
+    width: 60%;
+    position: relative;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.equipo1-desc h1 {
+    font-size: 25px;
+    font-weight: 650;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-kerning: none;
+    text-decoration: none;
+}
+.equipo1-desc p {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-kerning: none;
+    text-decoration: none;
+    position: relative;
+    top: 10px;
+}
+
+.contenedor-equipo img {
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.equipo1-desc {
+    margin: 0 auto;
+    position: relative;
+    top: 40px;
+}
+
+.equipo1-desc h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-contactar {
+    background-color: #ff3333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #ff1d06;
+}
+
+.contenedor-1-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12%;
+}
+
+.equipo1-desc {
+    background: rgb(12, 192, 223);
+}
+
+.equipo1-desc h1 {
+    position: relative;
+    top: 30px;
+}
+
+.equipo1-desc p {
+    position: relative;
+    top: 30px;
+}
+
+.equipo1-desc::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -100vh;
+    right: -100vh;
+    bottom: -60px;
+    background: rgb(12, 192, 223);
+    z-index: -1;
+}
+
+.contenedor-equipo {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 1464px){
+    .contenedor-ceo {
+        flex-direction: column;
+        position: relative;
+        top: 10px;
+    }
+    .contenedor-ceo img {
+        width: 80%;
+    }
+
+    .item2 {
+        max-width: 100%;
+    }
+
+}
+.equipo {
+    flex-grow: 1;
+}
+
+.contenedor-organigrama-nombre h1 {
+    font-weight: 1000;
+    font-size: 55px;
+    font-style: normal;
+    font-kerning: none;
+    text-decoration: none;
+    color: rgb(46, 44, 127);
+}
+
+.contenedor-organigrama-nombre {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 60px;
+
+}
+.contenedor-organigrama {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.contenedor-organigrama img {
+    width: 100%;
+    height: auto;
+    max-width: 1100px;
+}
+
+.contenedor-nuestroaliados-nombre h1 {
+    font-weight: 1000;
+    font-size: 55px;
+    font-style: normal;
+    font-kerning: none;
+    text-decoration: none;
+    color: rgb(46, 44, 127);
+}
+
+.contenedor-nuestroaliados-nombre {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 60px;
+}
+
+.contenedor-nuestroaliados {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+.contenedor-alidados {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.contenedor-alidados img {
+    height: 150px;
+    width: auto;
+}
+.contenedor-1-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+}
+
+@media (max-width: 1639px) {
+    .contenedor-ceo {
+        gap: 80px;
+    }
+}
+@media (max-width: 1619px) {
+    .contenedor-ceo {
+        gap: 50px;
+    }
+}
+@media (max-width: 1591px) {
+    .contenedor-ceo {
+        gap: 20px;
+    }
+}
+@media (max-width: 1563px) {
+    .item2 {
+        padding: 100px 100px;
+    }
+    main {
+        top: 150px;
+    }
+}
+
+@media (max-width: 1124px){
+    .contenedor-equipo {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .equipo {
+        flex-grow: 1;
+        flex-basis: 200%;
+    }
+    .equipo {
+        display: flex;
+        justify-content: center;
+    }
+    .equipo img {
+        height: 200px;
+        width: 200px;
+        position: relative;
+        right: 1px;
+        top: 50px;
+    }
+    .equipo1-desc {
+        left: 100px;
+    }
+    .button-contactar {
+        position: relative;
+        bottom: 20px;
+    }
+    .contenedor-alidados {
+        flex-direction: column;
+    }
+    .item1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 660px){
+    .equipo {
+        position: relative;
+        right: 40px;
+    }
+    .button-contactar {
+        position: relative;
+        bottom: 60px;
+        right: 300px;
+    }
+}
+@media (max-width: 744px){
+    .button-contactar {
+        position: relative;
+        top: 10px;
+    }
+}
+
+.tarjeta-equipo {
+    background-color: #1E3A8A;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    position: relative;
+    top: 60px;
+}
+
+.tarjeta-equipo img {
+    width: 180px;
+    height: 180px;
+    border: 4px solid white;
+}
+
+.fila-aliados {
+    display: flex; /* Usa flexbox para alinear los logos */
+    justify-content: center; /* Centra los logos en la fila */
+    flex-wrap: wrap; /* Permite que los logos se envuelvan si no hay suficiente espacio */
+    gap: 20px;
+}
+
+.aliado {
+    margin: 0 10px; /* Espaciado entre los logos */
+}

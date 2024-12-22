@@ -1,0 +1,32 @@
+<div>
+    <h2>Lista de Contacto</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Mensaje</th>
+          <th>Fecha de registro</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contacto of contactos">
+          <td>{{ contacto.nombre }}</td>
+          <td>{{ contacto.apellidos }}</td>
+          <td>{{ contacto.email }}</td>
+          <td>{{ contacto.telefono }}</td>
+          <td>{{ contacto.mensaje }}</td>
+          <td>{{ contacto.fecha }}</td>
+          <td>
+            <div style="display: flex; gap: 20px;">
+                <button (click)="deleteContacto(contacto.id)">Eliminar</button>
+                  <button (click)="refreshTable()">Actualizar tabla</button> <!-- Botón para actualizar la tabla -->
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

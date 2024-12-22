@@ -1,0 +1,50 @@
+<div>
+    <h2>Lista de Participantes - Libro de Reclamaciones</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo de Documento</th>
+          <th>Número de Documento</th>
+          <th>Nombres</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Departamento</th>
+          <th>Provincia</th>
+          <th>Distrito</th>
+          <th>Tipo</th>
+          <th>Subtipo</th>
+          <th>Motivo</th>
+          <th>Descripción</th>
+          <th>fecha_registro</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let participante of participantes">
+          <td>{{ participante.tipoDocumento }}</td>
+          <td>{{ participante.numeroDocumento }}</td>
+          <td>{{ participante.nombres }}</td>
+          <td>{{ participante.apellidoPaterno }}</td>
+          <td>{{ participante.apellidoMaterno }}</td>
+          <td>{{ participante.email }}</td>
+          <td>{{ participante.telefono }}</td>
+          <td>{{ participante.departamento }}</td>
+          <td>{{ participante.provincia }}</td>
+          <td>{{ participante.distrito }}</td>
+          <td>{{ participante.tipo }}</td>
+          <td>{{ participante.subtipo }}</td>
+          <td>{{ participante.motivo }}</td>
+          <td>{{ participante.descripcion }}</td>
+          <td>{{ participante.fecha }}</td>
+          <td>
+            <div style="display: flex; gap: 20px;">
+                <button (click)="deleteParticipante(participante.id)">Eliminar</button>
+                  <button (click)="refreshTable()">Actualizar tabla</button> <!-- Botón para actualizar la tabla -->
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,145 @@
+/* Contenedor general */
+.voluntariado {
+  text-align: center;
+  padding: 20px; /* Espacio alrededor */
+}
+
+
+/* Título principal */
+.title {
+  font-size: 4.5em;
+  color: #2e2c7f;
+  text-transform: uppercase;
+  margin: 60px 0;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Párrafo debajo del título */
+.voluntariado p {
+  font-size: 1.5rem; /* Aumenta el tamaño del texto del párrafo */
+  color: #333;
+  margin-bottom: 30px;
+  max-width: 1000px; /* Opcional: establece un ancho máximo para mejor legibilidad */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Centra el texto */
+}
+
+/* Subtítulos */
+.subtitle {
+  font-size: 2.0em;
+  color: #2e2c7f;
+  text-transform: uppercase;
+  margin: 40px 0;
+  font-weight: 800;
+
+}
+
+/* Tarjetas */
+.tarjetas-contenido, .tarjetas-eventos {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las tarjetas se apilen en filas */
+  justify-content: center; /* Centrar tarjetas */
+  gap: 100px; /* Aumentar el espacio entre tarjetas */
+  margin-bottom: 30px;
+}
+
+/* Tarjetas Verdes */
+.tarjeta {
+  flex: 1 1 280px; /* Las tarjetas ocuparán un mínimo de 280px */
+  max-width: 350px; /* Ancho máximo para tarjetas de contenido */
+  height: auto; /* Altura automática para ajustarse al contenido */
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #0cc0df; /* Fondo verde para tarjetas */
+  display: flex;
+  flex-direction: column; /* Para apilar contenido verticalmente */
+  justify-content: center; /* Centrar contenido verticalmente */
+}
+
+/* Texto dentro de las tarjetas verdes */
+.tarjeta p {
+  font-size: 0.9rem; /* Tamaño de fuente independiente para el texto de las tarjetas verdes */
+  color: #333; /* Color del texto */
+  max-width: 700px; /* Opcional: establece un ancho máximo para mejor legibilidad */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Centra el texto */
+  font-weight: 700;
+}
+
+/* Tarjetas con Imagen */
+.evento {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  flex: 1 1 280px; /* Las tarjetas ocuparán un mínimo de 280px */
+  max-width: 350px; /* Ancho máximo para tarjetas de evento */
+  height: 450px; /* Altura fija para las tarjetas de eventos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden; /* Asegura que el pseudo-elemento no sobresalga */
+}
+.evento::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Color negro semitransparente */
+  border-radius: 8px; /* Asegura que coincida con el borde de la tarjeta */
+  z-index: 1; /* Asegura que se muestre encima del fondo */
+}
+/* Estilo del contenido de las tarjetas */
+.contenido {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  position: relative; /* Necesario para que el texto esté encima de la superposición */
+  z-index: 2; /* Asegura que el texto esté encima de la superposición */
+}
+
+.contenedor-boton {
+  padding: 10px; /* Espaciado alrededor */
+  text-align: center; /* Centrar contenido */
+  position: relative; /* Para que el texto no se superponga */
+  z-index: 2; /* Para asegurarse de que el contenido esté visible */
+}
+/* Estilo del botón de registro */
+.button-registro {
+  background-color: white; /* Fondo blanco */
+  color: black; /* Texto negro */
+  padding: 10px 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  font-weight: bold;
+}
+
+/* Media Queries para ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .title {
+      font-size: 2.5em; /* Ajusta el tamaño del título en pantallas pequeñas */
+  }
+
+  .subtitle {
+      font-size: 1.5em; /* Ajustar tamaño del subtítulo en pantallas pequeñas */
+  }
+
+  .voluntariado p {
+      font-size: 1.2rem; /* Ajustar tamaño del texto del párrafo en pantallas pequeñas */
+  }
+
+  .tarjeta, .evento {
+      flex: 1 1 100%; /* Tarjetas ocuparán el 100% del ancho en pantallas muy pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 2em; /* Ajuste adicional para pantallas muy pequeñas */
+  }
+}

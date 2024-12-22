@@ -1,0 +1,25 @@
+/*Pié de páginas*/
+footer{
+  width: 100%;
+  position: relative;
+  margin-top: auto;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /*sombra*/
+}
+
+.redes a {
+  color: #2e2c7f;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500px;
+}
+
+/*media para logo footer*/
+@media (max-width: 767px) {
+  #footer-id {
+      position: relative;
+      bottom: 25px;
+  }
+  #footer-logo  {
+      height: 150px;
+  }
+}

@@ -1,0 +1,135 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 23px;
+  right: 30px;
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+  display: flex;
+  gap: 20px;
+}
+
+.chatbot-btn {
+  padding: 10px 20px;
+  background-color: #2220ad; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Transición al cambiar color */
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+}
+
+.chatbot-btn:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.chat-window {
+  font-family: 'Arial', sans-serif; /* Cambia la fuente principal solo en el chat */
+  width: 300px;
+  height: 500px; /* Limitar la altura para evitar que el contenido se salga */
+  background-color: #f1f1f1; /* Fondo del chatbot */
+  border: .9px solid #ccc; /* Borde del chatbot */
+  border-radius: 10px;
+  position: fixed;
+  bottom: 110px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* Para asegurarse de que el contenido extra no se desborde */
+  transform: translateY(20px); /* Inicialmente desplazado hacia abajo */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transición de opacidad y posición */
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+.chat-window.visible {
+  opacity: 1; /* Visibilidad */
+  transform: translateY(0); /* Regresar a su posición original */
+}
+
+.hidden {
+  display: none;
+}
+
+.chat-header {
+  background-color: #472d9c; /* Fondo del encabezado */
+  color: white; /* Color del texto del encabezado */
+  padding: 10px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white; /* Color del botón de cerrar */
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+}
+
+.chat-body {
+  padding: 10px;
+  display: flex;
+  margin-bottom: 20px; /* Espaciado inferior */
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los elementos */
+  overflow-y: auto; /* Permite scroll si el contenido es más alto que el contenedor */
+  flex-grow: 1; /* Para que el cuerpo del chat crezca y ocupe todo el espacio disponible */
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+}
+
+.chat-body p {
+  margin: 10px 0; /* Margen superior e inferior de los párrafos */
+  line-height: 1.5; /* Altura de línea */
+  color: #333; /* Color del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+}
+
+.chat-option {
+  background-color: #472d9c; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%; /* Asegurarse de que los botones no se desborden */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total del botón */
+  transition: background-color 0.3s ease; /* Transición al cambiar color */
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+}
+
+.chat-option:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.chat-response {
+  padding: 10px;
+  background-color: #e9ecef; /* Color de fondo de las respuestas */
+  border-top: 1px solid #ccc; /* Borde superior */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-height: auto; /* Altura mínima */
+  overflow-y: auto; /* Permite que la respuesta haga scroll si es necesario */
+  opacity: 0; /* Inicialmente oculto */
+  transform: translateY(10px); /* Inicialmente desplazado hacia abajo */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transición de opacidad y posición */
+  z-index: 2000; /* Asegura que el chatbot esté por delante de otros elementos */
+}
+
+.chat-response.visible {
+  opacity: 1; /* Visibilidad */
+  transform: translateY(0); /* Regresar a su posición original */
+}
+
+#close-chatbot:hover {
+  background-color: #ff1d06 !important; /* Color del botón al pasar el ratón */
+
+}

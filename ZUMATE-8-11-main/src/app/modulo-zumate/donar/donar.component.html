@@ -1,0 +1,85 @@
+<div class="contenedor-donacion">
+  <!-- Contenedor de donación -->
+  <div class="container w-75 mt-5">
+    <div class="contenedor row d-flex col-lg-12 col-md-10 col-sm-12 mx-auto">
+      <!-- Clase fondo-form para el formulario -->
+      <div id="fondo-form" class="col p-5 rounded col-lg-5 col-md-12 col-sm-12 col-xs-12 mx-auto mb-4">
+        <div class="text-end">
+          <img src="/Inicio/logo.png" height="90" alt="logo zumate">
+        </div>
+        <h2 class="fw-bold text-center py-5">INFORMACIÓN DEL RECEPTOR</h2>
+        <form action="#" method="POST">
+          <div>
+            <div class="mb-4">
+              <p class="form-control" id="txtnom" name="txtnom">
+                <strong>Nombres:</strong> Harold Bladimir
+              </p>
+            </div>
+            <div class="mb-4">
+              <p class="form-control" id="txtnom" name="txtnom">
+                <strong>Apellidos:</strong> Bullón Sánchez
+              </p>
+            </div>
+            <div class="mb-4">
+              <p class="form-control" id="txtnom" name="txtnom">
+                <strong>DNI:</strong> 43529199
+              </p>
+            </div>
+            <div class="mb-4">
+              <p class="form-control" id="txtnom" name="txtnom">
+                <strong>Correo Electrónico:</strong> zumate.vive"&#64;"gmail.com
+              </p>
+            </div>
+            <div class="mb-4">
+              <p class="form-control" id="txtnom" name="txtnom">
+                <strong>Celular:</strong> +51 917 365 659
+              </p>
+            </div>
+          </div>
+
+          <div class="container mt-4">
+            <div class="row">
+              <p><strong>Selecciona el método de pago:</strong></p>
+              <div class="col-md-4 mb-4">
+                <div class="d-grid">
+                  <button type="button" class="btn btn-warning d-flex align-items-center justify-content-center"
+                    onclick="showMenu('Yape')">
+                    <img src="/Donar/Yape.png" alt="Yape" style="width: 24px; height: 24px; margin-right: 8px;">
+                    Yape
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="d-grid">
+                  <button type="button" class="btn btn-warning d-flex align-items-center justify-content-center"
+                    onclick="showMenu('Plin')">
+                    <img src="/Donar/Plin.png" alt="Plin" style="width: 24px; height: 24px; margin-right: 8px;">
+                    Plin
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="d-grid">
+                  <button type="button" class="btn btn-warning d-flex align-items-center justify-content-center"
+                    onclick="showMenu('Transferencia')">
+                    <img src="/Donar/BCP.png" alt="Transferencia" style="width: 24px; height: 24px; margin-right: 8px;">
+                    Transferencia
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Menú flotante -->
+            <div id="menuFlotante" class="menu-flotante" style="display: none;">
+              <span id="closeMenu" onclick="closeMenu()" style="cursor: pointer; float: right;">&times;</span>
+              <div id="menuContent">
+                <!-- Contenido dinámico se inyectará aquí -->
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

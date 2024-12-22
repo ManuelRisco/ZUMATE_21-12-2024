@@ -1,0 +1,19 @@
+<div class="container programs-section">
+  <h2 class="title text-center mb-4">PROGRAMAS</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4" *ngFor="let program of programs">
+      <div class="program-card" (click)="flipCard(program)">
+        <div class="card-inner" [class.flipped]="program.isFlipped">
+          <div class="card-front">
+            <img [src]="program.imageUrl" alt="{{ program.title }}" class="img-fluid">
+            <div class="text-overlay">{{ program.title }}</div>
+          </div>
+          <div class="card-back d-flex flex-column justify-content-center align-items-center text-center">
+            <h2>{{ program.title }}</h2>
+            <p>{{ program.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

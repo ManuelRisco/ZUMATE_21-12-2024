@@ -1,0 +1,80 @@
+<div class="contenedor-contacto">
+  <div class="container w-75 mt-5 mb-5">
+    <div class="contenedor row align-items-stretch">
+      <div class="imagen-contacto d-none d-md-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img src="/Contacto/imagen_contacto.png" alt="imagen contacto" class="img-fluid">
+        <h1>CONTÁCTANOS</h1>
+        <P>¡Únete al cambio!</P>
+      </div>
+      <div id="fondo-form" class="col p-5">
+        <div class="text-end">
+          <img src="/Inicio/logo.png" width="80" alt="logo zumate">
+        </div>
+
+        <h2 class="fw-bold text-center py-5">Contacto</h2>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombres:</label>
+                <input id="nombre" formControlName="nombre" type="text" class="form-control">
+                <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="error">
+                  Nombre es requerido y solo debe contener letras.
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos:</label>
+                <input id="apellidos" formControlName="apellidos" type="text" class="form-control">
+                <div *ngIf="form.get('apellidos')?.invalid && form.get('apellidos')?.touched" class="error">
+                  Apellidos son requeridos y solo deben contener letras.
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input id="email" formControlName="email" type="email" class="form-control">
+                <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">
+                  Debe ser un email válido.
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input id="telefono" formControlName="telefono" type="text" class="form-control">
+                <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched" class="error">
+                  Teléfono debe ser numérico y únicamente 9 dígitos.
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="mensaje_contacto" class="form-label">Mensaje:</label>
+                <textarea id="mensaje_contacto" formControlName="mensaje_contacto" class="form-control"></textarea>
+                <div *ngIf="form.get('mensaje_contacto')?.invalid && form.get('mensaje_contacto')?.touched" class="error">
+                  Debe agregar un mensaje
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-12">
+              <button type="submit" [disabled]="form.invalid" class="btn btn-primary w-100">Enviar</button>
+            </div>
+          </div>
+        </form>
+        
+        <div *ngIf="mensaje" class="alert alert-info mt-3">
+          {{ mensaje }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

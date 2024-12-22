@@ -1,0 +1,88 @@
+<!-- Cuerpo -->
+<div class="container my-5">
+  <!-- Título del Blog -->
+  <div class="text-center">
+      <h1 class="fw-bold" style="font-size: 4rem; color: #2e2c7f;">BLOG</h1>
+  </div>
+
+  <!-- Sección del Blog Principal -->
+  <div class="row justify-content-center my-4">
+      <div class="col-md-5 mb-4">
+          <img src="/Blog/blog-referencia.png" class="img-fluid rounded" alt="Título del post 1" style="object-fit: cover; height: 520px;">
+      </div>
+      <div class="col-md-7">
+          <div class="card-body">
+              <p class="card-text fs-5">Bienvenidos al blog de Zumate, un espacio donde compartimos historias de impacto, consejos prácticos y actualizaciones de nuestros proyectos dedicados al empoderamiento de niños y adolescentes.</p>
+              <p class="card-text fs-5">Aquí encontrarás relatos inspiradores de jóvenes líderes, experiencias de voluntarios, y recursos útiles para padres, educadores y todos aquellos comprometidos con construir una sociedad más justa y solidaria.</p>
+              <p class="card-text fs-5">Explora nuestras publicaciones y descubre cómo, juntos, estamos transformando vidas y creando un futuro mejor para todos. ¡Zumate a esta gran aventura de cambio y crecimiento!</p>
+          </div>
+          <!-- Calificación y Compartir -->
+          <div class="d-flex align-items-center position-relative">
+              <div class="text-center me-4">
+                  <a href="https://www.facebook.com/profile.php?id=61565989621254&sk=reviews" target="_blank" aria-label="Dejar opinión en Facebook">
+                      <img src="/Blog/estrellas.png" alt="estrellas" class="img-fluid" style="width: 150px;">
+                  </a>
+                  <div><strong>Dejar Opinión</strong></div>
+              </div>
+              <div class="text-center ms-auto">
+                  <button (click)="toggleSocialMenu()" id="shareButton" class="btn btn-link" aria-label="Compartir">
+                      <i class="fa-solid fa-share-from-square fs-1"></i>
+                  </button>
+                  <div><strong>Compartir Redes</strong></div>
+              </div>
+              <div id="socialMenu" *ngIf="isSocialMenuVisible" class="social-menu">
+                  <a href="https://www.facebook.com/people/ONG-Zumate/61565989621254/?sk=about" target="_blank">
+                      <img src="/Social/facebook.png" alt="Facebook" class="img-fluid social-icon" style="width: 30px; margin-right: 10px;">
+                  </a>
+                  <a href="https://www.tiktok.com/@ongzumate?_t=8poHNn0lPOg&_r=1" target="_blank">
+                      <img src="/Social/Tiktok.png" alt="Tiktok" class="img-fluid social-icon" style="width: 30px; margin-right: 10px;">
+                  </a>
+                  <a href="https://www.instagram.com/zumateong/" target="_blank">
+                      <img src="/Social/instagram.png" alt="Instagram" class="img-fluid social-icon" style="width: 30px; margin-right: 10px;">
+                  </a>
+                  <a href="https://www.linkedin.com/company/ong-zumate/about/" target="_blank">
+                      <img src="/Social/Linkedin.png" alt="Linkedin" class="img-fluid social-icon" style="width: 30px;">
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Título Más Artículos -->
+  <div class="text-center my-5">
+      <h2 class="fw-bold" style="font-size: 4rem; color: #2e2c7f;">MÁS ARTÍCULOS</h2>
+  </div>
+
+  <!-- Sección Más Artículos -->
+  <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+          <div class="card">
+              <img src="/Blog/blog-referencia-3.png" alt="articulo 2" class="card-img-top rounded-top">
+              <div class="card-body">
+                  <h5 class="card-title text-center">Estrenamos Nueva Página Web! Conoce todo lo que Zumate Tiene para ti</h5>
+                  <p class="card-text">¡Estamos emocionados de compartir con todos ustedes el lanzamiento de nuestra nueva página web! En Zumate, creemos en la importancia de acercarnos a nuestra comunidad, y hemos rediseñado nuestro sitio con un enfoque más moderno, accesible e interactivo. Ahora puedes navegar fácilmente para conocer más sobre nuestra misión, los proyectos en los que trabajamos y las maneras en que puedes apoyar nuestra labor.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+          <div class="card">
+              <img src="/Blog/blog-referencia-2.png" alt="articulo 2" class="card-img-top rounded-top">
+              <div class="card-body">
+                  <h5 class="card-title text-center">La Importancia de la Actividad Física y el Juego en el Desarrollo de los Niños</h5>
+                  <p class="card-text">Este tema puede ayudar a crear conciencia sobre los beneficios de la actividad física, inspirando a más personas a unirse a la misión de ZUMATE y apoyar a los niños.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+          <div class="card">
+              <img src="/Blog/blog-referencia-3.png" alt="articulo 3" class="card-img-top rounded-top">
+              <div class="card-body">
+                  <h5 class="card-title text-center">Actividades de ZUMATE: Creando Sonrisas y Fortaleciendo Vidas</h5>
+                  <p class="card-text">Conoce las actividades recreativas, educativas y de salud que ZUMATE ofrece para el desarrollo integral de los niños. Desde talleres hasta deportes, te mostramos cómo cada actividad está diseñada para empoderar y crear experiencias inolvidables para nuestros pequeños.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

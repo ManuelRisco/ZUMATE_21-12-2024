@@ -1,0 +1,117 @@
+.contenedor-donacion {
+  background-image: url('/Donar/Blog-1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contenedor{
+  padding-bottom: 5%;
+}
+
+.container{
+  flex-grow :1;
+}
+
+.signin-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.signin-image img {
+  width: 50%;
+height: 50%;
+}
+
+#fondo-form{
+  background-color: white;
+}
+
+.btn-warning.active {
+  background-color: rgb(255, 226, 96) !important;
+}
+
+@media (max-width: 991px) {
+  .btn-donar {
+      margin: 20px auto; /* Centrar el botón y añadir margen superior e inferior */
+      display: block; /* Asegúrate de que se comporta como bloque */
+  }
+}
+@media (max-width: 1624px) {
+  .btn-donar {
+      margin: 20px auto; /* Centrar el botón y añadir margen superior e inferior */
+      display: block; /* Asegúrate de que se comporta como bloque */
+  }
+}
+@media (max-width: 1634px) {
+  .btn-donar {
+      margin: 10px auto; /* Centrar el botón y añadir margen superior e inferior */
+      display: block; /* Asegúrate de que se comporta como bloque */
+  }
+}
+/*Barra de navegación*/
+
+#fondo-form {
+  width: 100%; /* Asegura que el contenedor use todo el ancho disponible */
+  max-width: 600px; /* Establece un ancho máximo para pantallas más grandes */
+  padding: 2rem; /* Añade espacio interno */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(0);
+}
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.btn-donar:hover{
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transform: translateY(-3%);
+  background-color: #5056e9;
+}
+
+.menu-flotante {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Asegúrate de que esté en el frente */
+}
+
+.menu-flotante img {
+  width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/*media para logo footer*/
+@media (max-width: 767px) {
+  #footer-id {
+      position: relative;
+      bottom: 25px;
+  }
+  #footer-logo  {
+      height: 150px;
+  }
+}

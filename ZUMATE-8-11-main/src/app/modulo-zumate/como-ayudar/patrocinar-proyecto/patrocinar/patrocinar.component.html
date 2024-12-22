@@ -1,0 +1,47 @@
+<h1>Patrocinar
+  <style>
+    h1 {font-size: 40px; position: relative; bottom: 10px;}
+  </style>
+</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="nombreEmpresa">Nombre Empresa:</label>
+  <input id="nombreEmpresa" formControlName="nombreEmpresa" type="text">
+  <div *ngIf="form.get('nombreEmpresa')?.invalid && form.get('nombreEmpresa')?.touched" class="error">Nombre de empresa es requerido y solo debe contener letras.</div>
+
+  <label for="ruc">RUC:</label>
+  <input id="ruc" formControlName="ruc" type="text">
+  <div *ngIf="form.get('ruc')?.invalid && form.get('ruc')?.touched" class="error">RUC debe ser numérico y de máximo 11 dígitos.</div>
+
+  <label for="email">Email:</label>
+  <input id="email" formControlName="email" type="email">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">Debe ser un email válido.</div>
+
+  <label for="razonSocial">Razón Social:</label>
+  <input id="razonSocial" formControlName="razonSocial" type="text">
+  <div *ngIf="form.get('razonSocial')?.invalid && form.get('razonSocial')?.touched" class="error">Razon Social es requerido</div>
+
+  <label for="nombreRep">Nombre de Representante:</label>
+  <input id="nombreRep" formControlName="nombreRep" type="text">
+  <div *ngIf="form.get('nombreRep')?.invalid && form.get('nombreRep')?.touched" class="error">Nombre de representante es requerido y solo debe contener letras.</div>
+
+  <label for="apellidosRep">Apellidos de Representante:</label>
+  <input id="apellidosRep" formControlName="apellidosRep" type="text">
+  <div *ngIf="form.get('apellidosRep')?.invalid && form.get('apellidosRep')?.touched" class="error">Apellidos de representante es requerido y solo debe contener letras.</div>
+
+  <label for="telefono">Telefono:</label>
+  <input id="telefono" formControlName="telefono" type="text">
+  <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched" class="error">Telefono debe ser numérico y unicamente 9 dígitos.</div>
+
+  <label for="proyecto">Área a Patrocinar:</label>
+  <select id="proyecto" formControlName="proyecto">
+    <option *ngFor="let opcion of opciones" [value]="opcion">{{ opcion }}</option>
+  </select>
+  <div *ngIf="form.get('proyecto')?.invalid && form.get('proyecto')?.touched" class="error">Debe seleccionar una opción.</div>
+
+  <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>
+
+<div *ngIf="mensaje" class="mensaje">
+  {{ mensaje }}
+</div>

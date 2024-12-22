@@ -1,0 +1,82 @@
+<h1>ONG Zumate - Programa Pasantía</h1>
+<style>
+  h1 {font-size: 40px; position: relative; bottom: 10px;}
+  .error {color: red;}
+  .mensaje {color: green; margin-top: 10px;}
+  
+  /* Estilo para campos con errores */
+  .invalid-field {
+    border-color: red;
+  }
+</style>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- Nombres -->
+  <label for="nombre">Nombres:</label>
+  <input id="nombre" formControlName="nombre" type="text" [class.invalid-field]="form.get('nombre')?.invalid && form.get('nombre')?.touched">
+  <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="error">Nombre es requerido y solo debe contener letras.</div>
+
+  <!-- Apellidos -->
+  <label for="apellidos">Apellidos:</label>
+  <input id="apellidos" formControlName="apellidos" type="text" [class.invalid-field]="form.get('apellidos')?.invalid && form.get('apellidos')?.touched">
+  <div *ngIf="form.get('apellidos')?.invalid && form.get('apellidos')?.touched" class="error">Apellidos son requeridos y solo deben contener letras.</div>
+
+  <!-- DNI -->
+  <label for="dni">DNI:</label>
+  <input id="dni" formControlName="dni" type="text" [class.invalid-field]="form.get('dni')?.invalid && form.get('dni')?.touched">
+  <div *ngIf="form.get('dni')?.invalid && form.get('dni')?.touched" class="error">DNI debe ser numérico y de máximo 8 dígitos.</div>
+
+  <!-- Email -->
+  <label for="email">Email:</label>
+  <input id="email" formControlName="email" type="email" [class.invalid-field]="form.get('email')?.invalid && form.get('email')?.touched">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">Debe ser un email válido.</div>
+
+  <!-- Teléfono -->
+  <label for="telefono">Telefono:</label>
+  <input id="telefono" formControlName="telefono" type="text" [class.invalid-field]="form.get('telefono')?.invalid && form.get('telefono')?.touched">
+  <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched" class="error">Telefono debe ser numérico y unicamente 9 dígitos.</div>
+
+  <!-- Institución -->
+  <div>
+    <label for="institucion">Institución</label>
+    <select formControlName="institucion" (change)="onInstitucionChange()" [class.invalid-field]="form.get('institucion')?.invalid && form.get('institucion')?.touched">
+      <option *ngFor="let institucion of instituciones" [value]="institucion.id">
+        {{ institucion.nombre }}
+      </option>
+      <option value="otro">Otro</option>
+    </select>
+    <input *ngIf="form.get('institucion')?.value === 'otro'" formControlName="institucionPersonalizada" placeholder="Especifica otra institución">
+  </div>
+
+  <!-- Carrera -->
+  <div>
+    <label for="carrera">Carrera</label>
+    <select formControlName="carrera" (change)="onCarreraChange()" [class.invalid-field]="form.get('carrera')?.invalid && form.get('carrera')?.touched">
+      <option *ngFor="let carrera of carreras" [value]="carrera.id">
+        {{ carrera.nombre }}
+      </option>
+      <option value="otro">Otro</option>
+    </select>
+    <input *ngIf="form.get('carrera')?.value === 'otro'" formControlName="carreraPersonalizada" placeholder="Especifica otra carrera">
+  </div>
+
+  <!-- Ciclo de estudio -->
+  <label for="ciclo">Seleccione su ciclo de estudio:</label>
+  <select id="ciclo" formControlName="ciclo" [class.invalid-field]="form.get('ciclo')?.invalid && form.get('ciclo')?.touched">
+    <option *ngFor="let semestre of semestres" [value]="semestre">{{ semestre }}</option>
+  </select>
+  <div *ngIf="form.get('ciclo')?.invalid && form.get('ciclo')?.touched" class="error">Debe seleccionar una opción.</div>
+
+  <!-- Horas a realizar pasantía -->
+  <label for="horas">Seleccione horas a realizar pasantía semanalmente:</label>
+  <select id="horas" formControlName="horas" [class.invalid-field]="form.get('horas')?.invalid && form.get('horas')?.touched">
+    <option *ngFor="let tiempo of tiempos" [value]="tiempo">{{ tiempo }}</option>
+  </select>
+  <div *ngIf="form.get('horas')?.invalid && form.get('horas')?.touched" class="error">Debe seleccionar una opción.</div>
+
+  <!-- Botón de envío -->
+  <button type="submit" [disabled]="form.invalid">Enviar</button>
+
+  <!-- Mensaje -->
+  <p *ngIf="mensaje">{{ mensaje }}</p>
+</form>

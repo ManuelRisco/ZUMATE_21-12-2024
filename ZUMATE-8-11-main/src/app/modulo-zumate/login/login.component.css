@@ -1,0 +1,34 @@
+.contenedor-login {
+  background-image: url('/Login/fondologin.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contenedor{
+  padding-bottom: 5%;
+}
+
+.container{
+  flex-grow :1;
+}
+
+.signin-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.signin-image img {
+  width: 100%;
+  height: 100%;
+}
+
+#fondo-form{
+  background-color: rgb(255, 255, 255);
+}

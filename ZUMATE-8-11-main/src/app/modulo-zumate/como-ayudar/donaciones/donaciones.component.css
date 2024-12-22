@@ -1,0 +1,100 @@
+/* Opciones de donación */
+.donaciones {
+  width: 100%;
+  height: auto;
+  padding: 3% 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.donaciones h1,
+.donaciones h3 {
+  color: #2d2c7f;
+  font-family: 'Arial Black';
+  text-align: center;
+}
+
+.donacion-item {
+  background: linear-gradient(90deg, #2d2c7f, #493092, #b84466, #ed7a30, #ff1d06);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card {
+  margin-top: 20px;
+  text-align: center;
+  height: 150px;
+  background-color: #0cc0df;
+  border-radius: 20px;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card p {
+  padding: 0 3px;
+  margin: 0;
+}
+
+.tipo-donacion {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(190, 200, 215);
+}
+
+.contenido-donacion {
+  position: relative;
+  width: 100%;
+}
+
+.contenido-donacion img {
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.entrega-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.entrega-texto h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.objeto-donacion {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.ajustar-texto {
+  width: auto;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #0cc0df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ajustar-texto p {
+  font-size: 16px !important;
+}

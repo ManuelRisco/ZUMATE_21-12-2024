@@ -1,0 +1,34 @@
+<div>
+    <h2>Lista de Participantes - Chocolatada</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>DNI</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Preferencia</th>
+          <th>fecha_registro</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let participante of participantes">
+          <td>{{ participante.nombre }}</td>
+          <td>{{ participante.apellidos }}</td>
+          <td>{{ participante.dni }}</td>
+          <td>{{ participante.email }}</td>
+          <td>{{ participante.telefono }}</td>
+          <td>{{ participante.preferencia }}</td>
+          <td>{{ participante.fecha_registro }}</td>
+          <td>
+            <div style="display: flex; gap: 20px;">
+                <button (click)="deleteParticipante(participante.id)">Eliminar</button>
+                  <button (click)="refreshTable()">Actualizar tabla</button> <!-- Botón para actualizar la tabla -->
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

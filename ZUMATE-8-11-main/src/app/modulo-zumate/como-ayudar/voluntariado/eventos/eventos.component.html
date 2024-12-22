@@ -1,0 +1,50 @@
+<h1>Participar Evento</h1>
+<style>
+  h1 { font-size: 40px; position: relative; bottom: 10px; }
+</style>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="nombre">Nombres:</label>
+  <input id="nombre" formControlName="nombre" type="text">
+  <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="error">
+    Nombre es requerido y solo debe contener letras.
+  </div>
+
+  <label for="apellidos">Apellidos:</label>
+  <input id="apellidos" formControlName="apellidos" type="text">
+  <div *ngIf="form.get('apellidos')?.invalid && form.get('apellidos')?.touched" class="error">
+    Apellidos son requeridos y solo deben contener letras.
+  </div>
+
+  <label for="dni">DNI:</label>
+  <input id="dni" formControlName="dni" type="text">
+  <div *ngIf="form.get('dni')?.invalid && form.get('dni')?.touched" class="error">
+    DNI debe ser numérico y de máximo 8 dígitos.
+  </div>
+
+  <label for="email">Email:</label>
+  <input id="email" formControlName="email" type="email">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">
+    Debe ser un email válido.
+  </div>
+
+  <label for="telefono">Telefono:</label>
+  <input id="telefono" formControlName="telefono" type="text">
+  <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched" class="error">
+    Teléfono debe ser numérico y unicamente 9 dígitos.
+  </div>
+
+  <label for="eventos">Área a Participar:</label>
+  <select id="eventos" formControlName="eventos">
+    <option *ngFor="let opcion of opciones" [value]="opcion">{{ opcion }}</option>
+  </select>
+  <div *ngIf="form.get('eventos')?.invalid && form.get('eventos')?.touched" class="error">
+    Debe seleccionar una opción.
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>
+
+<div *ngIf="mensaje" class="mensaje">
+  {{ mensaje }}
+</div>

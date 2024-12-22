@@ -1,0 +1,49 @@
+<div>
+  <h2>Agregar Logo de Aliado</h2>
+  
+  <form [formGroup]="uploadForm" (ngSubmit)="subirImagen()">
+    <!-- Campo para seleccionar imagen -->
+    <input type="file" (change)="onFileSelected($event)" formControlName="imagen" />
+
+    <!-- Campo para URL -->
+    <input type="text" formControlName="url" placeholder="Ingresa la URL del aliado" />
+
+    <!-- Botón para subir la imagen -->
+    <button type="submit" [disabled]="uploadForm.invalid">Subir Imagen</button>
+  </form>
+</div>
+
+<div>
+  <h2>Imágenes de Aliados</h2>
+  
+  <!-- Mostrar imágenes en tabla -->
+  <table *ngIf="imagenes.length > 0; else sinImagenes">
+      <thead>
+          <tr>
+              <th>Imagen</th>
+              <th>Nombre del Archivo</th>
+              <th>URL</th>
+              <th>Fecha de Registro</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let imagen of imagenes">
+              <td><img [src]="imagen.ruta_archivo" alt="Logo de Aliado" width="100" /></td>
+              <td>{{ imagen.nombre_archivo }}</td>
+              <td>{{ imagen.url_aliado }}</td>
+              <td>{{ imagen.fecha }}</td>
+              <td>
+                  <div style="display: inline-flex; gap: 20px;">
+                      <button (click)="eliminarImagen(imagen.id)">Eliminar</button>
+                      <button (click)="refreshTable()">Actualizar</button>
+                  </div>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  <ng-template #sinImagenes>
+      <p>No hay imágenes para mostrar</p>
+  </ng-template>
+</div>

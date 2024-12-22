@@ -1,0 +1,69 @@
+<div>
+  <h2>ONG Zumate - Registro de personal</h2>
+
+  <!-- Formulario para crear/editar participantes -->
+  <form [formGroup]="participanteForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="usuario">Usuario</label>
+      <input id="usuario" formControlName="usuario">
+    </div>
+    <div>
+      <label for="password">Clave</label>
+      <input id="password" formControlName="password" type="password">
+    </div>
+    <div>
+      <label for="nombre">Nombres</label>
+      <input id="nombre" formControlName="nombre">
+    </div>
+    <div>
+      <label for="apellidos">Apellidos</label>
+      <input id="apellidos" formControlName="apellidos">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email">
+    </div>
+    <div>
+      <label for="rol">Rol</label>
+      <input id="rol" formControlName="rol">
+    </div>
+    <div>
+      <label for="estado">Estado</label>
+      <input id="estado" formControlName="estado">
+    </div>
+
+    <button type="submit">{{ isEditMode ? 'Actualizar' : 'Crear' }} Participante</button>
+    <button type="button" (click)="resetForm()">Cancelar</button>
+  </form>
+
+  <!-- Tabla de participantes -->
+  <table>
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Clave</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let participante of participantes">
+        <td>{{ participante.usuario }}</td>
+        <td>{{ participante.password }}</td>
+        <td>{{ participante.nombre }}</td>
+        <td>{{ participante.apellidos }}</td>
+        <td>{{ participante.email }}</td>
+        <td>{{ participante.rol }}</td>
+        <td>{{ participante.estado }}</td>
+        <td style="display: flex; gap: 20px;">
+          <button (click)="editParticipante(participante)">Editar</button>
+          <button (click)="deleteParticipante(participante.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

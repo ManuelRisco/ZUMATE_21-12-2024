@@ -1,0 +1,117 @@
+<h1>Libro de Reclamaciones - ONG Zumate</h1>
+
+<p style="text-align: center; padding: 0 30px 0 30px;">Por favor, complete el siguiente formulario para registrar su reclamo o queja. Sus datos serán tratados con
+  la mayor confidencialidad y nos pondremos en contacto con usted a la brevedad posible.</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Sección 1: Información Personal</h2>
+
+  <label for="tipoDocumento">Tipo de documento (obligatorio):</label>
+  <select id="tipoDocumento" formControlName="tipoDocumento">
+    <option *ngFor="let documento of documentos" [value]="documento">{{ documento }}</option>
+  </select>
+  <div *ngIf="form.get('tipoDocumento')?.invalid && form.get('tipoDocumento')?.touched" class="error">
+    Tipo de documento es obligatorio.
+  </div>
+
+  <label for="numeroDocumento">Número de documento (obligatorio):</label>
+  <input id="numeroDocumento" formControlName="numeroDocumento" type="text">
+  <div *ngIf="form.get('numeroDocumento')?.invalid && form.get('numeroDocumento')?.touched" class="error">
+    Número de documento es obligatorio y debe ser numérico.
+  </div>
+
+  <label for="nombres">Nombres completos (obligatorio):</label>
+  <input id="nombres" formControlName="nombres" type="text">
+  <div *ngIf="form.get('nombres')?.invalid && form.get('nombres')?.touched" class="error">
+    Nombres completos es obligatorio.
+  </div>
+
+  <label for="apellidoPaterno">Apellido paterno (obligatorio):</label>
+  <input id="apellidoPaterno" formControlName="apellidoPaterno" type="text">
+  <div *ngIf="form.get('apellidoPaterno')?.invalid && form.get('apellidoPaterno')?.touched" class="error">
+    Apellido paterno es obligatorio.
+  </div>
+
+  <label for="apellidoMaterno">Apellido materno (obligatorio):</label>
+  <input id="apellidoMaterno" formControlName="apellidoMaterno" type="text">
+  <div *ngIf="form.get('apellidoMaterno')?.invalid && form.get('apellidoMaterno')?.touched" class="error">
+    Apellido materno es obligatorio.
+  </div>
+
+  <label for="email">Correo Electrónico (obligatorio):</label>
+  <input id="email" formControlName="email" type="email">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">
+    Correo Electrónico es obligatorio y debe ser válido.
+  </div>
+
+  <label for="telefono">Número de Teléfono (obligatorio):</label>
+  <input id="telefono" formControlName="telefono" type="text">
+  <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched" class="error">
+    Número de Teléfono es obligatorio y debe ser numérico.
+  </div>
+
+  <label for="departamento">Departamento (obligatorio):</label>
+  <input id="departamento" formControlName="departamento" type="text">
+  <div *ngIf="form.get('departamento')?.invalid && form.get('departamento')?.touched" class="error">
+    Departamento es obligatorio.
+  </div>
+
+  <label for="provincia">Provincia (obligatorio):</label>
+  <input id="provincia" formControlName="provincia" type="text">
+  <div *ngIf="form.get('provincia')?.invalid && form.get('provincia')?.touched" class="error">
+    Provincia es obligatoria.
+  </div>
+
+  <label for="distrito">Distrito (obligatorio):</label>
+  <input id="distrito" formControlName="distrito" type="text">
+  <div *ngIf="form.get('distrito')?.invalid && form.get('distrito')?.touched" class="error">
+    Distrito es obligatorio.
+  </div>
+
+  <h2>Sección 2: Detalles de su reclamo</h2>
+
+  <label for="tipo">Tipo (obligatorio):</label>
+  <select id="tipo" formControlName="tipo">
+    <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+  </select>
+  <div *ngIf="form.get('tipo')?.invalid && form.get('tipo')?.touched" class="error">
+    Tipo es obligatorio.
+  </div>
+
+  <label for="subtipo">SubTipo (obligatorio):</label>
+  <select id="subtipo" formControlName="subtipo">
+    <option *ngFor="let subtipo of subtipos" [value]="subtipo">{{ subtipo }}</option>
+  </select>
+  <div *ngIf="form.get('subtipo')?.invalid && form.get('subtipo')?.touched" class="error">
+    Subtipo es obligatorio.
+  </div>
+
+  <label for="motivo">Motivo (obligatorio):</label>
+  <select id="motivo" formControlName="motivo">
+    <option *ngFor="let motivo of motivos" [value]="motivo">{{ motivo }}</option>
+  </select>
+  <div *ngIf="form.get('motivo')?.invalid && form.get('motivo')?.touched" class="error">
+    Motivo es obligatorio.
+  </div>
+
+  <label for="descripcion">Descripción (opcional):</label>
+  <textarea id="descripcion" formControlName="descripcion" class="form-control w-100"></textarea>
+
+  <!-- Checkbox para términos de uso con enlace a una nueva pestaña -->
+  <div class="form-check align-items-center">
+    <input type="checkbox" class="form-check-input" id="acceptTerms" formControlName="acceptTerms">
+    <label class="form-check-label ml-2" for="acceptTerms">
+      He leído y acepto los
+      <a routerLink="/terminos-uso">términos de uso y </a>
+      <a routerLink="/terminos-privacidad">términos de privacidad</a>
+    </label>
+  </div>
+  <div *ngIf="form.get('acceptTerms')?.invalid && form.get('acceptTerms')?.touched" class="error">
+    Debes aceptar los términos de uso.
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>
+
+<div *ngIf="mensaje" class="mensaje">
+  {{ mensaje }}
+</div>
